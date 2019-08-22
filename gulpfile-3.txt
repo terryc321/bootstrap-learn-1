@@ -1,5 +1,18 @@
 const { series, parallel } = require('gulp');
 
+// Requires the gulp-sass plugin
+var sass = require('gulp-sass');
+
+
+
+function sassCompile(cb) {
+  return gulp.src('app/scss/style.scss')
+    .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(gulp.dest('app/css'));
+  cb();
+}
+
+
 function clean(cb) {
   // body omitted
   cb();
@@ -34,6 +47,11 @@ function publish(cb) {
   // body omitted
   cb();
 }
+
+
+exports.sass = sassCompile;
+
+
 
 exports.build = series(
   clean,
