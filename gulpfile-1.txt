@@ -1,0 +1,14 @@
+
+
+
+// see gulfile.txt for a bigger gulp example
+// this is gulp 4
+
+function defaultTask(cb) {
+  // place code for your default task here
+  cb();
+}
+
+exports.default = defaultTask
+
+
